@@ -1,0 +1,32 @@
+# Secrets - NEVER commit
+.env
+.env.*
+!.env.example
+*.json.bak
+openclaw.json
+credentials/
+auth-profiles.json
+sessions.json
+delivery-queue/
+
+# Logs
+*.log
+clawcraft_logs/
+
+# Runtime
+node_modules/
+/tmp/
+__pycache__/
+*.pyc
+.jiti/
+
+# System
+.DS_Store
+*.swp
+*~
+
+# Claude Code
+.claude/
+
+# Archives
+archive_demo_scripts/
