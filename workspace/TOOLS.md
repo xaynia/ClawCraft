@@ -95,3 +95,6 @@ All load via CDN in HTML:
 ## Slidev Addons
 - slidev-addon-python-runner: run Python code blocks live in slides
 - Plotly.js available for interactive-style chart rendering in slides
+
+## Lessons Learned (persistent memory)
+Read lessons-learned.md before starting any 3D work. It contains spatial construction rules, parenting hierarchy rules, and coordinate verification rules from previous sessions. Append new lessons after each session.
