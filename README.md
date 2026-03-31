@@ -74,6 +74,8 @@ renders/          Blender render outputs from iterative feedback loops
 docs/             Project documentation and reference PDFs
 ```
 
+See [Iteration Log](JOURNAL.md) for the visual record of how each scene evolved through the feedback loop.
+
 ## Setup
 
 This repo contains the plugin source code, workspace configurations, and render outputs. To run the full pipeline you also need:
