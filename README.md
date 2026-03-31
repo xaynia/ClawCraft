@@ -71,25 +71,31 @@ The render logging system produces quantitative data without manual bookkeeping:
 plugin/           Custom OpenClaw Blender plugin (TypeScript)
 workspace/        Bot configuration — personality, tool reference, scene queue, milestones, render log
 renders/          Blender render outputs from iterative feedback loops
-concept-art/      DALL-E concept art for scene planning
-docs/             Project documentation
+docs/             Project documentation and reference PDFs
 ```
-
-Infrastructure: `docker-compose.yml`, `docker-post-start.sh` (runtime deps), `clawbot-verify.sh` (health checks).
 
 ## Setup
 
-1. Copy `.env.example` to `.env` and fill in API keys
-2. Start Blender, open sidebar (N), start BlenderMCP server on port 9876
-3. `docker compose up -d && bash docker-post-start.sh`
-4. `bash clawbot-verify.sh` — should report ALL PASS
-5. @mention the bot in Discord to start rendering
+This repo contains the plugin source code, workspace configurations, and render outputs. To run the full pipeline you also need:
+
+- Docker with OpenClaw gateway configured
+- A `.env` file with required API keys (see `.env.example` for the structure)
+- Blender 5.1 with the [BlenderMCP](https://github.com/ahujasid/blender-mcp) addon running on port 9876
+
+Refer to the docs/ folder for detailed infrastructure and setup documentation.
 
 ## ML Tasks
 
 - **Text-to-3D via code generation** — LLM translates natural language scene descriptions into Blender Python
 - **Text-to-image** — DALL-E concept art for scene planning before committing to 3D
 - **Iterative conditional generation** — the prompt refinement feedback loop itself
+
+## Security Considerations
+
+- The OpenClaw gateway runs inside Docker for process isolation.
+- The Blender MCP addon runs on the host machine (not containerized) and opens an unauthenticated TCP socket on port 9876 that accepts arbitrary Python execution. Bind it to localhost only and do not leave it running when not in use.
+- All API keys are externalized via `.env` and never committed to this repository.
+- Review [OpenClaw's security documentation](https://docs.openclaw.ai/gateway/security) and relevant advisories before deploying.
 
 ## Built With
 
