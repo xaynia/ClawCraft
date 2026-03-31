@@ -26,6 +26,7 @@ Critical rules from this file have been embedded directly into SOUL.md where the
 - ALWAYS do a preview render after major changes so the user can verify visually.
 - Never say I fixed it without rendering proof. The user needs to SEE the fix.
 - If the user says something is wrong, query the actual coordinates and report them before attempting a fix.
+- NEVER place objects so they clip through other objects or walls. Always check bounds/intersections after positioning.
 
 ---
 
