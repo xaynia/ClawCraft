@@ -69,7 +69,7 @@ The render logging system produces quantitative data without manual bookkeeping:
 
 ```
 plugin/           Custom OpenClaw Blender plugin (TypeScript)
-workspace/        Bot configuration — personality, tool reference, scene queue, milestones, render log
+workspace/        Bot configuration — personality, tool reference, scene queue, milestones, render log, lessons learned
 renders/          Blender render outputs from iterative feedback loops
 docs/             Project documentation and reference PDFs
 ```

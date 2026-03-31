@@ -1,6 +1,6 @@
-# ClawBot Lessons Learned
+# ClawBot Lessons Learned (Appendable Log)
 
-Read this file at the start of every session. These are hard-won corrections from previous art production sessions. Follow them exactly.
+Critical rules from this file have been embedded directly into SOUL.md where they are guaranteed to load every session. This file remains as an appendable log - ClawBot adds new lessons here after each session, and they get promoted to SOUL.md periodically.
 
 ---
 
