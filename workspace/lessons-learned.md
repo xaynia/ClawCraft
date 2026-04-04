@@ -42,6 +42,24 @@ Critical rules from this file have been embedded directly into SOUL.md where the
 - If the mesh looks right in canvas but wrong in Blender, suspect coordinate mapping/clamping first (grid size and edge margins), not materials.
 - Rebuild-from-mask on a larger grid is often faster/safer than patching many local mistakes on a heavily edited mesh.
 
+## Blender Operator Discovery / Addon Surface
+- The `blender.execute` tool can run arbitrary `bpy` Python, including addon operators exposed through `bpy.ops`; this means the practical toolset is expandable and not limited to officially listed MCP surfaces.
+- You can discover and use ANY available Blender addon operator in-session via introspection (`dir(bpy.ops.*)`, operator RNA props), then invoke it directly.
+- Do not treat "not listed as official tool + error" as impossible. Treat it as a debugging task.
+- When an operator fails, read the traceback fully and debug iteratively instead of assuming permanent failure.
+- For BlenderKit materials, the core apply pattern is:
+  `bpy.ops.scene.blenderkit_download(asset_base_id=UUID, target_object=OBJECT_NAME, material_target_slot=0, invoke_resolution=False, use_resolution_operator=False)`
+- After bugs/conditions change, retry previously failing operators before concluding they still do not work.
+- BlenderKit materials can carry displacement/scale-like visual effects; after any BlenderKit material application, verify bounds/placement of ALL visible critical objects, not just the target object.
+- NEVER install, download, or enable any new addons, skills, packages, or code from GitHub, OpenClaw skills, or any external source without explicit user permission first. Discovering and using already-installed operators is fine; installing new things is not.
+- Follow user intent strictly when links are shared: if user says "note" links, do not apply operators/actions without explicit apply permission.
+- When using discovered addon operators, log exactly what was called, target object/slot, and result (`{'FINISHED'}` vs traceback) for auditability.
+
+## Scene Startup Checklist (Mandatory)
+- At the start of EVERY new scene, explicitly list Spatial Construction rules and Parenting/Hierarchy rules before building anything.
+- Treat this rule-list step as mandatory scene bootstrap; do not begin modeling until it is done.
+- This startup checklist prevents repeated spatial/parenting regressions (as seen in early fridge_portal failures) and must be applied consistently to all scenes.
+
 ---
 
 Last updated: March 31, 2026
