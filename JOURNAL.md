@@ -2,53 +2,55 @@
 
 Raw process documentation: every render the pipeline produced, ordered by scene and iteration. The progression tells the story from first attempt to final polish. Failures, fixes, and breakthroughs.
 
-## At a Glance (as of March 31, 2026)
+## At a Glance (as of April 6, 2026)
 
-- 59 renders so far across 4 scenes and 4 sessions. Art production ongoing.
-- Pipeline was broken for a week due to a silent tool name conflict. Fixed March 31.
-- fridge_portal: 25 renders, mostly fighting spatial construction. The AI couldn't build a room from separate walls or place a fridge inside it.
-- shelf_artifacts: 24 renders, polished to completion. Lessons from fridge embedded in AI instructions. Objects placed correctly on first build.
-- The AI excels at materials, lighting, and parameter-based operations (1-2 iterations). It struggles with spatial coordination and multi-part assembly (8-25 iterations).
-- Writing failure corrections into the AI's instruction file (SOUL.md) produced measurable improvement across scenes.
-- The AI analyzed its own process and independently identified that constraint-driven edits outperform subjective descriptions.
-- More scenes coming. This log will grow as the project continues.
+- ~209 renders across 5 scenes and 6 sessions. Presentation April 9.
+- Pipeline was broken for a week due to a silent tool name conflict. Fixed March 31. Fully operational since.
+- fridge_portal: 23 renders, mostly fighting spatial construction. The AI couldn't build a room from separate walls or place a fridge inside it.
+- shelf_artifacts: 169 renders across 3 sessions. Evolved from basic shelf to polished scene with Minecraft diamond sword, emissive materials, BlenderKit PBR textures, and compositor post-processing.
+- garden_growing_voxels: 10 renders in ~18 minutes. Built using the "representation engineering" workflow discovered during the sword saga. First scene where the planning-first approach was used from the start.
+- The AI excels at materials, lighting, and parameter-based operations (1-2 iterations). It struggles with spatial coordination and multi-part assembly (8-25 iterations). But with the right intermediate representation (html-canvas 2D preview), spatial tasks drop to 1-2 iterations too.
+- Writing failure corrections into the AI's instruction file (SOUL.md) produced measurable improvement across scenes (Reflexion-style learning).
+- The AI discovered it could extend its own toolset by introspecting Blender's operator registry (BlenderKit via bpy.ops). It also self-analyzed its methodology and named it "representation engineering."
+- Each scene builds faster than the last: fridge 25 renders fighting walls, shelf 24 first session + 145 iterating, garden 10 renders total in 18 minutes.
 
-**Thesis:** AI-assisted 3D art creation produces two complementary forms of intelligence that neither human nor AI achieves alone: the human provides spatial reasoning the AI lacks, while the AI provides pattern analysis across iterations the human can't efficiently perform. The iterative feedback loop isn't a workaround for AI limitations. It's the creative method itself.
+**Thesis:** AI-assisted 3D art creation produces two complementary forms of intelligence that neither human nor AI achieves alone: the human provides spatial reasoning and persistence the AI lacks, while the AI provides pattern analysis, methodology articulation, and emergent tool discovery the human can't efficiently perform. The iterative feedback loop isn't a workaround for AI limitations -- it's the creative method itself. And when the right intermediate representation is found (html-canvas as a planning layer), the loop accelerates dramatically.
 
 ---
 
 ## Project Stats
 
-- **Total renders:** 59
-- **Total render time:** 2 minutes 7 seconds (EEVEE is fast. The time is in the iteration loop, not the rendering.)
-- **Scenes attempted:** 4 (test_cube, test_sphere, fridge_portal, shelf_artifacts)
-- **Sessions:** 4 (March 23 infrastructure, March 26 Notion, March 28 failed renders, March 31 breakthrough)
+- **Total renders:** ~209
+- **Total render time:** EEVEE renders in 1-3 seconds each. The time is in the iteration loop, not the rendering.
+- **Scenes attempted:** 5 (test_cube, test_sphere, fridge_portal, shelf_artifacts, garden_growing_voxels)
+- **Sessions:** 6 (March 23 infrastructure, March 26 Notion, March 28 failed renders, March 31 breakthrough, April 2-3 sword saga + breakthroughs, April 4 garden + housekeeping)
 
 ### Per-Scene Breakdown
 
-**fridge_portal** - 25 renders across 3 sessions
+**fridge_portal** - 23 renders across 3 sessions
 - March 26: 2 renders (early test)
-- March 28: 13 renders (broken pipeline, images never posted to Discord)
+- March 28: 11 renders (broken pipeline, images never posted to Discord)
 - March 31: 10 renders (working pipeline, spatial reasoning battleground)
 - Issues: walls as separate planes with gaps, fridge behind back wall, parts floating, parenting reversed, origins off-center
 - Fix that worked: "build a hollow cube and delete the front face" instead of "build a room with connected walls"
 
-**shelf_artifacts** - 24 renders in one session
-- March 31: 24 renders in ~96 minutes (3:36 PM to 5:12 PM)
-- Objects placed correctly on first build (SOUL.md lessons from fridge worked)
-- 8 iterations on sword assembly alone (spatial coordination failure on multi-part object)
-- 3-4 iterations on materials/lighting (AI's strength: parameter-based operations)
-- Final render: wood shelf, iron brackets, glazed ceramic mugs, glass potion bottle, crystal gem, wall-mounted sword
+**shelf_artifacts** - 169 renders across 3 sessions
+- March 31: 24 renders in ~96 min. First build correct (SOUL.md lessons from fridge). Polished to wood shelf, iron brackets, mugs, potion, gem, wall-mounted sword.
+- April 2-3: ~120 renders. Minecraft diamond sword saga (40+ failed direct attempts, then html-canvas breakthrough). Emissive materials. BlenderKit discovery.
+- April 3-4: ~25 renders. BlenderKit PBR materials, compositor nodes (glare, fog glow, star glints), continued polish.
 
-**test_cube** - 3 renders
-- Pipeline validation after fixing the canvas tool name conflict
+**garden_growing_voxels** - 10 renders in one session
+- April 4: 10 renders in ~18 minutes (2:21 AM to 2:39 AM)
+- First scene built using the full "representation engineering" workflow from the start
+- html-canvas preview approved before any Blender work. Built correctly on essentially the first attempt.
 
-**test_sphere** - 3 renders
-- First successful iterative feedback loop (reframe after camera was too close)
+**test_cube** - 3 renders. Pipeline validation.
+
+**test_sphere** - 3 renders. First successful iterative feedback loop.
 
 ### What ClawBot's Own Analysis Found
 
-From ClawBot's workflow_observation field across 59 renders:
+From ClawBot's workflow_observation field across ~209 renders:
 1. Constraint-driven edits converge faster than subjective nudging
 2. Geometry-first, then materials/lighting improves iteration clarity
 3. Measured coordinate snapping beats visual guessing for contact/seating
@@ -56,14 +58,19 @@ From ClawBot's workflow_observation field across 59 renders:
 5. Frequent milestone previews catch structural errors early
 6. Small orientation/framing tweaks produce large readability gains
 7. Material micro-detail (roughness, texture variation) significantly increases perceived realism without changing composition
+8. **When direct generation is noisy, add a structured intermediate layer that matches the decision granularity you need** (ClawBot's own articulation of the html-canvas methodology)
+9. AI self-limits based on tool surface assumptions even when it has execute access to the entire host application
+10. Errors should be debugged, not accepted as permanent limitations
 
-### Two Levels of Learning
+### Three Levels of Learning
 
 **Level 1 - Human-taught rules (SOUL.md):** Human corrects AI spatial failures and writes explicit rules. Example: "build rooms as hollow cube, not separate planes." These rules transferred from fridge_portal to shelf_artifacts, reducing iterations from 25 to correct-on-first-build.
 
 **Level 2 - AI self-observed patterns (workflow_observation):** ClawBot analyzes his own process after each render. Example: "constraint-driven edits converge faster than subjective nudging." The AI recognizes its own limitations and recommends mitigations.
 
-Neither level works alone. The human can't generate 59 renders and analyze patterns efficiently. The AI can't reason about 3D space. Each provides what the other lacks.
+**Level 3 - AI methodology articulation:** ClawBot named the html-canvas workflow "representation engineering" and independently identified where else it applies (logos, room layouts, texture masks). The AI contributed to workflow design, not just task execution.
+
+Neither level works alone. The human can't generate 209 renders and analyze patterns efficiently. The AI can't reason about 3D space or debug third-party addon bugs. Three systems collaborated: ClawBot discovered methods (bpy.ops introspection), the user provided persistence and skepticism, Claude Code fixed underlying code (BlenderKit avatar512 bug).
 
 ---
 
@@ -156,4 +163,110 @@ First real art session. Kitchen shell, fridge placement, iterating on spatial co
 | ![019](renders/shelf_artifacts_019.png) | ![020](renders/shelf_artifacts_020.png) | ![021](renders/shelf_artifacts_021.png) |
 | Glass potion bottle + crystal gem | Smooth shading pass (no subdivision) | Glossy ceramic plates |
 | ![022](renders/shelf_artifacts_022.png) | ![023](renders/shelf_artifacts_023.png) | ![024](renders/shelf_artifacts_024.png) |
-| Wood texture on shelf | Iron brackets, wall texture | **Final render** |
+| Wood texture on shelf | Iron brackets, wall texture | **Final render (session 1)** |
+
+---
+
+## Scene 2 continued: shelf_artifacts (April 2-4)
+
+**What happened:** The March 31 "final render" was the starting point for the most productive and discovery-rich phase of the project. Over April 2-4, the scene evolved through 145 more renders across three major phases: the Minecraft diamond sword saga, emissive material development, and BlenderKit/compositor refinement.
+
+### Phase 1: The Sword Saga (renders 026-115, April 2-3)
+
+The original wall-mounted sword from March 31 was a simple geometric shape. The goal was to replace it with a Minecraft-style diamond sword -- blocky, pixelated, recognizable. This took 40+ direct attempts in Blender and became the project's most important failure-to-breakthrough story.
+
+**What went wrong:** ClawBot couldn't translate a reference image of a Minecraft diamond sword into correct Blender geometry. The sword kept coming out wrong -- wrong proportions, wrong orientation, blocks misaligned, stairs-pattern instead of diamond grid. Each iteration fixed one thing and broke another. The AI was fighting the same spatial coordination problem as fridge_portal, but at pixel scale.
+
+**The breakthrough:** Using the html-canvas tool to generate a 2D pixel grid preview of the sword BEFORE building in Blender. The preview used a coordinate system that mapped directly to Blender's local XY space. Once the 2D layout was approved, the Blender build was deterministic -- "apply mask" instead of "re-interpret intent." The sword built correctly on the first attempt after the preview was approved.
+
+**ClawBot named this "representation engineering":** "The breakthrough was mostly representation engineering (better intermediate format), not just better prompting." He identified the general pattern: Reference → constrained intermediate spec → approval → deterministic projection into Blender. And he generalized it beyond pixel art to logos, room layouts, texture masks, and UI panels.
+
+| | | |
+|---|---|---|
+| ![030](renders/shelf_artifacts_030.png) | ![040](renders/shelf_artifacts_040.png) | ![059](renders/shelf_artifacts_059.png) |
+| Early sword attempts -- wrong shape, stairs pattern | Still fighting spatial assembly | Sword starting to take shape but wrong proportions |
+| ![080](renders/shelf_artifacts_080.png) | ![100](renders/shelf_artifacts_100.png) | ![110](renders/shelf_artifacts_110.png) |
+| More iterations, closer but still off | Diamond grid emerging after html-canvas insight | Post-canvas: sword shape correct |
+| ![115](renders/shelf_artifacts_115.png) | ![120](renders/shelf_artifacts_120.png) | ![130](renders/shelf_artifacts_130.png) |
+| Sword refined, filled blade accents | Polished diamond sword, correct proportions | Sword with emissive glow beginning |
+
+### Phase 2: Emissive Art Direction (renders ~115-144, April 3)
+
+With the sword solved, the art direction shifted to emissive materials. The creative rule: every game object GLOWS with emission shaders. The glow signals "this doesn't belong here" -- like a screen leaking into reality. This became the unifying visual language across all scenes.
+
+- Emission shaders added to sword (cyan glow), gem (purple), potion bottle
+- Lights reduced from 28 to 12 (emissive was washing everything out)
+- PBR materials on real objects (mugs, plates, shelf) contrasting with flat emissive game objects
+
+| | |
+|---|---|
+| ![140](renders/shelf_artifacts_140.png) | ![144](renders/shelf_artifacts_144.png) |
+| Emissive sword + dark wall + organic vines | Pre-BlenderKit material state |
+
+### Phase 3: BlenderKit + Compositor (renders 145-170, April 3-4)
+
+**BlenderKit discovery:** ClawBot autonomously discovered `bpy.ops.scene.blenderkit_download()` by introspecting Blender's operator registry -- a tool NOT in his official MCP toolset. He found it by running `dir(bpy.ops.scene)`. Initially it failed due to an `avatar512` bug in BlenderKit's UserProfile class. Claude Code fixed it with a one-line change to `datas.py`. After the fix, ClawBot could apply any BlenderKit PBR material by UUID.
+
+**Why this matters:** The AI extended its own capabilities at runtime by exploring the host application's API. It wasn't programmed to use BlenderKit. It discovered it could, hit a bug, accepted the bug as permanent ("addon is broken"), and only succeeded when the human pushed back ("why did it work twice but not again?") and Claude Code debugged the actual error. Three systems, one bug, none could have solved it alone.
+
+**Compositor nodes:** ClawBot learned the Blender 5 compositor API (`scene.compositing_node_group` instead of the deprecated `use_nodes`). Built a post-processing chain: Render Layers → Simple Star Glare → Fog Glow Glare → Mix node. Star glints + soft bloom stacked for emissive glow enhancement.
+
+| | | |
+|---|---|---|
+| ![145](renders/shelf_artifacts_145.png) | ![150](renders/shelf_artifacts_150.png) | ![157](renders/shelf_artifacts_157.png) |
+| BlenderKit PBR materials applied | Emissive glow with compositor bloom | Compositor refinement |
+| ![160](renders/shelf_artifacts_160.png) | ![170](renders/shelf_artifacts_170.png) | |
+| Continued compositor polish | **Latest render** | |
+
+### Key findings from shelf_artifacts April sessions
+
+1. **html-canvas as 2D planning layer** -- 40 failed direct attempts → first try with preview. The most significant workflow discovery.
+2. **AI emergent tool discovery** -- ClawBot found BlenderKit via bpy.ops introspection without being told about it.
+3. **AI self-limits based on perceived tool surface** -- thought BlenderKit was unavailable because it wasn't in the MCP tool list.
+4. **AI accepts errors as permanent** rather than debugging them -- had the readable traceback but stopped at "addon is broken."
+5. **BlenderKit materials have geometry side effects** -- displacement/scale changes from material application require bounds checking on ALL objects, not just the target.
+6. **Three-system collaboration** -- ClawBot discovered the method, user provided persistence and skepticism, Claude Code fixed the underlying bug.
+7. **Workflow compounding** -- each phase built on the previous one. Sword lessons → emissive art direction → BlenderKit materials → compositor post-processing.
+
+---
+
+## Scene 3: garden_growing_voxels (April 4)
+
+**Vision:** A real windowsill planter box with voxel plants growing from the soil. Blocky leaves, cube stems, pixelated flowers glowing with emission shaders. Real PBR planter and soil contrasting with emissive game-world vegetation.
+
+10 renders in ~18 minutes. The first scene built entirely using the representation engineering workflow from the start.
+
+**What happened:** Before touching Blender, ClawBot listed all spatial construction rules, generated an html-canvas layout preview, iterated on it 3 times (flower placement, petal structure, plant spacing), got user approval, then mapped the canvas grid coordinates to Blender XYZ using the planter as anchor space with voxel grid snapping. The scene built correctly without the spatial fighting that defined earlier scenes.
+
+**Key comparison:**
+- fridge_portal: 25 renders, most iterations fighting basic room construction
+- shelf_artifacts (first session): 24 renders, correct placement but 8 iterations on sword assembly
+- garden_growing_voxels: 10 renders in 18 minutes, essentially correct from first build
+
+The workflow is compounding. Rules + methodology + planning layer = dramatically faster scene production.
+
+| | | |
+|---|---|---|
+| ![002](renders/garden_growing_voxels_002.png) | ![003](renders/garden_growing_voxels_003.png) | ![004](renders/garden_growing_voxels_004.png) |
+| First Blender render (planter geometry) | Plants taking shape | Voxel stems and leaves |
+| ![005](renders/garden_growing_voxels_005.png) | ![006](renders/garden_growing_voxels_006.png) | ![007](renders/garden_growing_voxels_007.png) |
+| Refinement | Layout adjustments | Materials developing |
+| ![008](renders/garden_growing_voxels_008.png) | ![009](renders/garden_growing_voxels_009.png) | ![010](renders/garden_growing_voxels_010.png) |
+| Near final | Polish pass | Composition refinement |
+| ![011](renders/garden_growing_voxels_011.png) | | |
+| **Latest render** | | |
+
+---
+
+## Breakthroughs Timeline
+
+| Date | Discovery | Impact |
+|---|---|---|
+| Mar 31 | canvas → html-canvas rename fixes pipeline | Entire system unblocked |
+| Mar 31 | Hollow cube mesh > separate planes | Spatial construction solved |
+| Mar 31 | SOUL.md lessons transfer across scenes | Reflexion-style learning validated |
+| Apr 2 | html-canvas as 2D planning layer | 40 failures → 1st try success |
+| Apr 3 | ClawBot names "representation engineering" | AI contributes to workflow design |
+| Apr 3 | BlenderKit via bpy.ops introspection | AI extends own toolset at runtime |
+| Apr 3 | Three-system collaboration model | Human + AI agent + AI assistant |
+| Apr 4 | Garden scene in 18 min using full workflow | Compounding validated |
