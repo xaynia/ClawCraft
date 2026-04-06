@@ -18,6 +18,21 @@ Raw process documentation: every render the pipeline produced, ordered by scene 
 
 ---
 
+## ClawBot Self-Assessment System
+
+Every render is tagged by ClawBot with an `outcome_type` — the AI's own evaluation of whether it achieved what was asked. These tags appear next to each image in the journal.
+
+| Symbol | Tag | Meaning |
+|---|---|---|
+| ✓ | success | "I did what you asked and it looks right" |
+| ◐ | partial | "It rendered but something's off" |
+| ✗ | failure | "This is completely wrong or broken" |
+| ✦ | happy_accident | "I didn't do what you asked but it looks cool anyway" |
+
+**Why this matters:** ClawBot tags conservatively. The first 24 shelf_artifacts renders are all tagged ◐ partial even though the scene was clearly improving — because the AI knew there was still something to fix each time. The gap between the AI's self-assessment and the human's creative judgment is itself a finding: AI agents have conservative self-evaluation that doesn't always reflect creative progress.
+
+---
+
 ## Project Stats
 
 - **Total renders:** ~209
@@ -149,21 +164,21 @@ First real art session. Kitchen shell, fridge placement, iterating on spatial co
 | | | |
 |---|---|---|
 | ![001](renders/shelf_artifacts_001.png) | ![002](renders/shelf_artifacts_002.png) | ![003](renders/shelf_artifacts_003.png) |
-| First build, white on white | Colors added | Camera pulled back, full shelf visible |
+| ◐ First build, white on white | ◐ Colors added | ◐ Camera pulled back, full shelf visible |
 | ![004](renders/shelf_artifacts_004.png) | ![005](renders/shelf_artifacts_005.png) | ![006](renders/shelf_artifacts_006.png) |
-| Sword parenting fixes | Sword orientation fixes | Sword repositioned |
+| ◐ Sword parenting fixes | ◐ Sword orientation fixes | ◐ Sword repositioned |
 | ![007](renders/shelf_artifacts_007.png) | ![008](renders/shelf_artifacts_008.png) | ![009](renders/shelf_artifacts_009.png) |
-| Sword rebuilt as single mesh | Vertex snapping, first connected sword | Guard widened, gold coloring |
+| ◐ Sword rebuilt as single mesh | ◐ Vertex snapping, first connected sword | ◐ Guard widened, gold coloring |
 | ![010](renders/shelf_artifacts_010.png) | ![011](renders/shelf_artifacts_011.png) | ![012](renders/shelf_artifacts_012.png) |
-| Handle lengthened, blade tapered | Shelf/bracket spacing fixed | Objects repositioned on shelf |
+| ◐ Handle lengthened, blade tapered | ◐ Shelf/bracket spacing fixed | ◐ Objects repositioned on shelf |
 | ![013](renders/shelf_artifacts_013.png) | ![014](renders/shelf_artifacts_014.png) | ![015](renders/shelf_artifacts_015.png) |
-| Sword tilted for visibility | Solidify + bevel modifiers | Leaning against wall attempt |
+| ◐ Sword tilted for visibility | ◐ Solidify + bevel modifiers | ◐ Leaning against wall attempt |
 | ![016](renders/shelf_artifacts_016.png) | ![017](renders/shelf_artifacts_017.png) | ![018](renders/shelf_artifacts_018.png) |
-| Wall-mounted sword display | Blade rotated to face camera | Subdivision surface experiments |
+| ◐ Wall-mounted sword display | ◐ Blade rotated to face camera | ◐ Subdivision surface experiments |
 | ![019](renders/shelf_artifacts_019.png) | ![020](renders/shelf_artifacts_020.png) | ![021](renders/shelf_artifacts_021.png) |
-| Glass potion bottle + crystal gem | Smooth shading pass (no subdivision) | Glossy ceramic plates |
+| ◐ Glass potion bottle + crystal gem | ◐ Smooth shading pass (no subdivision) | ◐ Glossy ceramic plates |
 | ![022](renders/shelf_artifacts_022.png) | ![023](renders/shelf_artifacts_023.png) | ![024](renders/shelf_artifacts_024.png) |
-| Wood texture on shelf | Iron brackets, wall texture | **Final render (session 1)** |
+| ◐ Wood texture on shelf | ◐ Iron brackets, wall texture | ◐ **Final render (session 1)** |
 
 ---
 
@@ -184,11 +199,11 @@ The original wall-mounted sword from March 31 was a simple geometric shape. The 
 | | | |
 |---|---|---|
 | ![030](renders/shelf_artifacts_030.png) | ![040](renders/shelf_artifacts_040.png) | ![059](renders/shelf_artifacts_059.png) |
-| Early sword attempts -- wrong shape, stairs pattern | Still fighting spatial assembly | Sword starting to take shape but wrong proportions |
+| ✓ Early sword attempts -- wrong shape, stairs pattern | ✓ Still fighting spatial assembly | ✓ Sword starting to take shape but wrong proportions |
 | ![080](renders/shelf_artifacts_080.png) | ![100](renders/shelf_artifacts_100.png) | ![110](renders/shelf_artifacts_110.png) |
-| More iterations, closer but still off | Diamond grid emerging after html-canvas insight | Post-canvas: sword shape correct |
+| ✓ More iterations, closer but still off | ✓ Diamond grid emerging after html-canvas insight | ✓ Post-canvas: sword shape correct |
 | ![115](renders/shelf_artifacts_115.png) | ![120](renders/shelf_artifacts_120.png) | ![130](renders/shelf_artifacts_130.png) |
-| Sword refined, filled blade accents | Polished diamond sword, correct proportions | Sword with emissive glow beginning |
+| ✓ Sword refined, filled blade accents | ✓ Polished diamond sword, correct proportions | ✓ Sword with emissive glow beginning |
 
 ### Phase 2: Emissive Art Direction (renders ~115-144, April 3)
 
@@ -201,7 +216,7 @@ With the sword solved, the art direction shifted to emissive materials. The crea
 | | |
 |---|---|
 | ![140](renders/shelf_artifacts_140.png) | ![144](renders/shelf_artifacts_144.png) |
-| Emissive sword + dark wall + organic vines | Pre-BlenderKit material state |
+| ✓ Emissive sword + dark wall + organic vines | ✓ Pre-BlenderKit material state |
 
 ### Phase 3: BlenderKit + Compositor (renders 145-170, April 3-4)
 
@@ -214,9 +229,9 @@ With the sword solved, the art direction shifted to emissive materials. The crea
 | | | |
 |---|---|---|
 | ![145](renders/shelf_artifacts_145.png) | ![150](renders/shelf_artifacts_150.png) | ![157](renders/shelf_artifacts_157.png) |
-| BlenderKit PBR materials applied | Emissive glow with compositor bloom | Compositor refinement |
+| ✓ BlenderKit PBR materials applied | ✓ Emissive glow with compositor bloom | ✓ Compositor refinement |
 | ![160](renders/shelf_artifacts_160.png) | ![170](renders/shelf_artifacts_170.png) | |
-| Continued compositor polish | **Latest render** | |
+| ✓ Continued compositor polish | ✓ **Latest render** | |
 
 ### Key findings from shelf_artifacts April sessions
 
@@ -248,13 +263,13 @@ The workflow is compounding. Rules + methodology + planning layer = dramatically
 | | | |
 |---|---|---|
 | ![002](renders/garden_growing_voxels_002.png) | ![003](renders/garden_growing_voxels_003.png) | ![004](renders/garden_growing_voxels_004.png) |
-| First Blender render (planter geometry) | Plants taking shape | Voxel stems and leaves |
+| ✓ First Blender render (planter geometry) | ✓ Plants taking shape | ✓ Voxel stems and leaves |
 | ![005](renders/garden_growing_voxels_005.png) | ![006](renders/garden_growing_voxels_006.png) | ![007](renders/garden_growing_voxels_007.png) |
-| Refinement | Layout adjustments | Materials developing |
+| ✓ Refinement | ✓ Layout adjustments | ✓ Materials developing |
 | ![008](renders/garden_growing_voxels_008.png) | ![009](renders/garden_growing_voxels_009.png) | ![010](renders/garden_growing_voxels_010.png) |
-| Near final | Polish pass | Composition refinement |
+| ✓ Near final | ✓ Polish pass | ✓ Composition refinement |
 | ![011](renders/garden_growing_voxels_011.png) | | |
-| **Latest render** | | |
+| ✓ **Latest render** | | |
 
 ---
 
