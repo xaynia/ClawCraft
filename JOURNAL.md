@@ -2,6 +2,8 @@
 
 Raw process documentation: every render the pipeline produced, ordered by scene and iteration. The progression tells the story from first attempt to final polish. Failures, fixes, and breakthroughs.
 
+See [DALL-E Concept Art](CONCEPT-ART.md) for pre-production reference images and prompts used before each scene build.
+
 ## At a Glance (as of April 6, 2026)
 
 - ~209 renders across 5 scenes and 6 sessions. Presentation April 9.
