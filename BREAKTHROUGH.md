@@ -1,5 +1,7 @@
 # Breakthrough: Representation Engineering
 
+ClawBot's definition, in his own words: *"The breakthrough was mostly representation engineering (better intermediate format), not just better prompting. When direct generation is noisy, add a structured intermediate layer that matches the decision granularity you need."* He described it as a general pattern: reference, then constrained intermediate spec, then approval, then deterministic projection into Blender. He later generalized it to *"any task where you can introduce an intermediate constrained spec: iconography, logos, decals, low-poly silhouettes, UI-to-3D panels, layout blocking, texture masks."*
+
 ## The Discovery
 
 After 40+ failed attempts to build a minecraft diamond sword directly in Blender from text descriptions and reference images, we discovered that adding an html-canvas preview step as an intermediate layer made the translation work perfectly on the first try.
@@ -20,13 +22,9 @@ After 40+ failed attempts to build a minecraft diamond sword directly in Blender
 4. Deterministic transfer: once approved, Blender step becomes "apply mask" not "re-interpret intent"
 5. Isolation of concerns: solved 2D design first, then 3D placement/material/lighting separately
 
-**ClawBot's conclusion:** "The breakthrough was mostly representation engineering (better intermediate format), not just better prompting."
-
 ## The General Pattern
 
 Reference -> constrained intermediate spec -> approval -> deterministic projection into Blender
-
-"When direct generation is noisy, add a structured intermediate layer that matches the decision granularity you need."
 
 ## Applications Beyond Pixel Art (identified by ClawBot)
 
@@ -38,7 +36,7 @@ Reference -> constrained intermediate spec -> approval -> deterministic projecti
 
 ## Validated: Full Scene Composition (April 16)
 
-ClawBot's prediction that this would work beyond pixel art was proven on April 16 with toy_shelf_scene. The html-canvas intermediate was used for the entire scene layout -- shelf arrangement, toy placement, creeper positioning, lighting zones -- not just a pixel grid.
+ClawBot's prediction that this would work beyond pixel art was proven on April 16 with toy_shelf_scene. The html-canvas intermediate was used for the entire scene layout: shelf arrangement, toy placement, creeper positioning, lighting zones; not just a pixel grid.
 
 Result: **38 renders with zero failed iterations.** Every render was refinement, not correction. Compare:
 
@@ -51,7 +49,7 @@ The key insight: match the intermediate representation to the decision granulari
 
 ## Production Speed Compounding
 
-4 scenes built on April 16 in ~95 minutes total (68 renders). The accumulated SOUL.md rules + lessons-learned + representation engineering + emissive art direction = each scene builds faster and cleaner than the last. bedroom_cloud_sky took 3 renders in 6 minutes -- material/lighting tasks with pre-loaded spatial rules are near-instant.
+4 scenes built on April 16 in ~95 minutes total (68 renders). The accumulated SOUL.md rules, lessons-learned, representation engineering, and emissive art direction meant each scene built faster and cleaner than the last. bedroom_cloud_sky took 3 renders in 6 minutes; material/lighting tasks with pre-loaded spatial rules are near-instant.
 
 ## Why This Matters
 

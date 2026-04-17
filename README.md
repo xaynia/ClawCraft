@@ -19,13 +19,13 @@ Production ran from March 26 to April 16. Seven scenes delivered: `fridge_portal
 
 The aesthetic explores childhood game worlds leaking into mundane domestic spaces. 7 scenes delivered, 289 renders:
 
-- **fridge_portal** -- a retro fridge opens onto a blocky voxel landscape with grass blocks, waterfalls, and a cat watching from the kitchen floor
-- **shelf_artifacts** -- a wall shelf with ceramic mugs and plates next to a glowing minecraft potion bottle, faceted crystal gem, and two swords: one realistic silver, one pixelated diamond
-- **garden_growing_voxels** -- a realistic windowsill planter box with minecraft-style voxel plants growing from real soil, emissive blocky stems and a glowing flower
-- **clouds_balcony** -- a photorealistic apartment balcony at golden hour with minecraft blocky clouds floating in the sunset sky
-- **bedroom_cloud_sky** -- a cozy bedroom where the ceiling is replaced by a retro game sky with blocky emissive clouds and pixel stars
-- **hallway_renderdist** -- a dim photorealistic hallway with a glowing red GAME OVER screen filling an open doorframe, emissive red light flooding the corridor
-- **toy_shelf_scene** -- a wooden toy shelf with a robot, bunny stuffy, and capybara next to a glowing minecraft creeper casting eerie green light on the real toys
+- **fridge_portal**: a retro fridge opens onto a blocky voxel landscape with grass blocks, waterfalls, and a cat watching from the kitchen floor
+- **shelf_artifacts**: a wall shelf with ceramic mugs and plates next to a glowing minecraft potion bottle, faceted crystal gem, and two swords; one realistic silver, one pixelated diamond
+- **garden_growing_voxels**: a realistic windowsill planter box with minecraft-style voxel plants growing from real soil, emissive blocky stems and a glowing flower
+- **clouds_balcony**: a photorealistic apartment balcony at golden hour with minecraft blocky clouds floating in the sunset sky
+- **bedroom_cloud_sky**: a cozy bedroom where the ceiling is replaced by a retro game sky with blocky emissive clouds and pixel stars
+- **hallway_renderdist**: a dim photorealistic hallway with a glowing red GAME OVER screen filling an open doorframe, emissive red light flooding the corridor
+- **toy_shelf_scene**: a wooden toy shelf with a robot, bunny stuffy, and capybara next to a glowing minecraft creeper casting eerie green light on the real toys
 
 The contrast between rendering styles is the point. Realistic PBR lighting falls on impossible geometry. Both successes and productive failures are part of the work.
 
