@@ -254,7 +254,7 @@ With the sword solved, the art direction shifted to emissive materials. The crea
 | ![145](renders/shelf_artifacts_145.png) | ![150](renders/shelf_artifacts_150.png) | ![157](renders/shelf_artifacts_157.png) |
 | ✓ BlenderKit PBR materials applied | ✓ Emissive glow with compositor bloom | ✓ Compositor refinement |
 | ![160](renders/shelf_artifacts_160.png) | ![170](renders/shelf_artifacts_170.png) | |
-| ✓ Continued compositor polish | ✓ **Latest render** | |
+| ✓ Continued compositor polish | ✓ **Final render** | |
 
 ### Key findings from shelf_artifacts April sessions
 
@@ -279,7 +279,7 @@ With the sword solved, the art direction shifted to emissive materials. The crea
 **Key comparison:**
 - fridge_portal: 25 renders, most iterations fighting basic room construction
 - shelf_artifacts (first session): 24 renders, correct placement but 8 iterations on sword assembly
-- garden_growing_voxels: 10 renders in 18 minutes, essentially correct from first build
+- garden_growing_voxels: 11 renders in 18 minutes, essentially correct from first build
 
 The workflow is compounding. Rules + methodology + planning layer = dramatically faster scene production.
 
@@ -292,7 +292,7 @@ The workflow is compounding. Rules + methodology + planning layer = dramatically
 | ![008](renders/garden_growing_voxels_008.png) | ![009](renders/garden_growing_voxels_009.png) | ![010](renders/garden_growing_voxels_010.png) |
 | ✓ Near final | ✓ Polish pass | ✓ Composition refinement |
 | ![011](renders/garden_growing_voxels_011.png) | | |
-| ✓ **Latest render** | | |
+| ✓ **Final render** | | |
 
 ---
 

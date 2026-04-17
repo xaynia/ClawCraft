@@ -39,7 +39,7 @@ This satisfies the second ML architecture requirement (diffusion/autoregressive 
 
 ---
 
-## bedroom_sky
+## bedroom_sky (built as: bedroom_cloud_sky)
 
 ![bedroom concept](dalle-scene-concept-art/001-face-on-a-cozy-bedroom-with-real-wooden-.png)
 
@@ -47,7 +47,7 @@ This satisfies the second ML architecture requirement (diffusion/autoregressive 
 
 ---
 
-## closet_gameover
+## closet_gameover (built as: hallway_renderdist)
 
 ![closet concept](dalle-scene-concept-art/closet-gameover-concept.png)
 
@@ -55,7 +55,7 @@ This satisfies the second ML architecture requirement (diffusion/autoregressive 
 
 ---
 
-## toy_shelf (delivered)
+## toy_shelf (built as: toy_shelf_scene)
 
 ![toy shelf concept](dalle-scene-concept-art/001-face-on-a-real-wooden-toy-shelf-warm-bed.png)
 

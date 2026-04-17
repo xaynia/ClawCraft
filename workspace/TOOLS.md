@@ -31,7 +31,7 @@
 
 ## Render Naming Convention
 Format: {scene_id}_{iteration:03d}.png
-Examples: fridge_portal_001.png, shelf_artifacts_002.png, bathtub_overflow_001.png
+Examples: fridge_portal_001.png, shelf_artifacts_002.png, garden_growing_voxels_002.png
 
 ## Prompt Queue
 See prompt_queue.md for pre-planned scenes. When user says "run next prompt", check which scene has not been attempted yet and start with that one.
@@ -46,10 +46,11 @@ Workflow notes: Personal observations go in workflow_notes.md — bot can append
 ## Scene IDs
 - fridge_portal
 - shelf_artifacts
-- bathtub_overflow
-- window_gameworld
-- dining_dungeon
+- garden_growing_voxels
+- clouds_balcony
+- bedroom_cloud_sky
 - hallway_renderdist
+- toy_shelf_scene
 
 ## Graphs and Charts
 - Python3 with matplotlib and pillow are installed.

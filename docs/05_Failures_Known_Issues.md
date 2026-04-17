@@ -1,6 +1,6 @@
 # Failures and Known Issues
 
-Running log of everything that broke during ClawCraft production, how it was fixed, and what state the fix is in as of the project's final delivery date (April 9, 2026).
+Running log of everything that broke during ClawCraft production, how it was fixed, and what state the fix is in as of the project's final delivery date (April 16, 2026).
 
 The matching Mar-31 PDF in this folder (`05_Failures_Known_Issues.pdf`) is kept as a historical snapshot. This markdown file is the current truth.
 
@@ -173,7 +173,7 @@ Plus the Scene Preservation rule: before clearing any scene, save a `.blend` cop
 
 ## Scoped Out (Not Failures)
 
-The original scope included six scenes plus two stretch scenes. Three scenes were delivered by the April 9 presentation (`fridge_portal`, `shelf_artifacts`, `garden_growing_voxels`). Four more were built on April 16 during the final production push (`clouds_balcony`, `bedroom_cloud_sky`, `hallway_renderdist`, `toy_shelf_scene`), bringing the total to seven delivered scenes across 289 renders.
+The original scope included six scenes. Three scenes were delivered by the April 9 presentation (`fridge_portal`, `shelf_artifacts`, `garden_growing_voxels`). Four more were built on April 16 during the final production push (`clouds_balcony`, `bedroom_cloud_sky`, `hallway_renderdist`, `toy_shelf_scene`), bringing the total to seven delivered scenes across 289 renders.
 
 ---
 
