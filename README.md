@@ -13,6 +13,7 @@ Production ran from March 26 to April 16. Seven scenes delivered: `fridge_portal
 - [All 289 Renders](https://youtu.be/S8gcj9-rnKI) -- every render the pipeline produced, in order
 - [Garden Voxels Build](https://youtu.be/o8-dEm6hjeY) -- 6x sped-up recording with synced terminal panel showing live tool calls
 - [4 New Scenes Build](https://youtu.be/NinDCYD1III) -- 22x sped-up recording of clouds_balcony, bedroom_cloud_sky, hallway_renderdist, and toy_shelf_scene with synced tool-call panel
+- [ClawHub (Notion)](https://sulfuric-muskmelon-53a.notion.site/ClawHub-32f366192ab580269bc9d49f3827e498) -- project hub with daily logs, scene tracker, workflow findings, bugs database
 
 ## The Art
 
