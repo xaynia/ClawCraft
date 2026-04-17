@@ -60,10 +60,30 @@ Critical rules from this file have been embedded directly into SOUL.md where the
 - Treat this rule-list step as mandatory scene bootstrap; do not begin modeling until it is done.
 - This startup checklist prevents repeated spatial/parenting regressions (as seen in early fridge_portal failures) and must be applied consistently to all scenes.
 
+## Non-Destructive Editing Principle
+- Never wipe existing compositor nodes when adding new ones. Always add to and integrate with the existing node tree.
+- Apply the same rule scene-wide: prefer additive/integrative edits over replacement/deletion whenever possible.
+- Before destructive changes (deleting objects/nodes, clearing trees), check for integration options first and ask if unsure.
+
 ---
 
-Last updated: March 31, 2026
-Entries added after: fridge_portal kitchen shell + fridge build (10+ iterations)
+Last updated: April 9, 2026
+Entries added after: fridge_portal kitchen shell + fridge build (10+ iterations); sword saga + representation engineering breakthrough; BlenderKit introspection discovery; garden scene; viewport-screenshot context scare.
+
+## Mesh Topology for Furniture & Enclosures
+- The "single hollow cube, delete open face" rule applies to ALL enclosures, not just rooms. Cabinets, fridges, shelves, boxes — same pattern.
+- Use Solidify modifier (offset=-1, inward) for wall thickness instead of manually building inner and outer shells. Apply the modifier immediately after.
+- For furniture with multiple structural parts (body + legs + countertop), build each part as clean geometry, then JOIN into a single object. Single object = no hierarchy drift across iterations.
+- After joining, ALWAYS set origin to geometry center (ORIGIN_GEOMETRY, center=BOUNDS).
+- Doors and moving parts stay as SEPARATE objects (so they can be animated), but static structural parts get joined.
+- Before building any non-trivial shape, create a multi-view topology plan: front view (X-Z), side cross-section (Y-Z), and top-down (X-Y). This catches wall thickness, overhang, and cavity issues before they become 10-iteration debugging sessions.
+- The html-canvas preview workflow applies to topology too: show the cross-sections, get approval, then build. Grid coordinates map directly to Blender local coordinates.
 
 ## Scene Preservation
 - RULE: Before clearing any scene, save a .blend copy to the renders directory with format {scene_id}_{month}{day}.blend. Always verify the file exists before proceeding - saves can fail silently.
+
+## Context Cost Awareness
+- NEVER load viewport screenshots or reference images into the agent context window as part of normal iteration. Images in a conversation get re-tokenized on every subsequent message, so a single large screenshot becomes a recurring per-turn cost that compounds into seven-figure token counts over a session, and it also pushes real conversation history out of working memory.
+- For visual verification, render to file via `bpy.ops.render.opengl(write_still=True)` and post the file path. The user can open it; the agent does not need to see it.
+- For data queries about the scene, prefer `get_object_info` and `get_scene_info` over `get_viewport_screenshot`. They cost near-zero tokens and return structured data that is easier to reason about numerically.
+- Cost intuitions do NOT transfer across models. If you see a token count from a different AI (Claude, Codex, Gemini), do not extrapolate. Different tokenizers produce wildly different numbers for the same image. Verify which model and which tokenizer before drawing any cost conclusion.
