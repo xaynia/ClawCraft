@@ -272,7 +272,7 @@ With the sword solved, the art direction shifted to emissive materials. The crea
 
 **Vision:** A real windowsill planter box with voxel plants growing from the soil. Blocky leaves, cube stems, pixelated flowers glowing with emission shaders. Real PBR planter and soil contrasting with emissive game-world vegetation.
 
-10 renders in ~18 minutes. The first scene built entirely using the representation engineering workflow from the start.
+10 renders in ~18 minutes. The first scene built entirely using the representation engineering workflow from the start. [Watch the build (6x speed with live tool-call trace)](https://youtu.be/o8-dEm6hjeY).
 
 **What happened:** Before touching Blender, ClawBot listed all spatial construction rules, generated an html-canvas layout preview, iterated on it 3 times (flower placement, petal structure, plant spacing), got user approval, then mapped the canvas grid coordinates to Blender XYZ using the planter as anchor space with voxel grid snapping. The scene built correctly without the spatial fighting that defined earlier scenes.
 
@@ -300,7 +300,7 @@ The workflow is compounding. Rules + methodology + planning layer = dramatically
 
 **Vision:** A photorealistic apartment balcony at golden hour. The sky is real sunset colors but the clouds are wrong -- they are Minecraft-style blocky voxel clouds, flat geometric forms with clean stepped edges, glowing with soft emissive white light. The balcony is grounded and believable. The clouds are a visual glitch from another world.
 
-11 renders in ~19 minutes. Built during the final production push. DALL-E concept art was used as a visual target before building in Blender. The scene came together quickly -- balcony geometry is simpler than room interiors (no enclosure coordination), and the blocky clouds are exactly the kind of geometric primitive ClawBot handles well.
+11 renders in ~19 minutes. Built during the final production push. [Watch all 4 new scenes being built (22x speed with live tool-call trace)](https://youtu.be/NinDCYD1III). DALL-E concept art was used as a visual target before building in Blender. The scene came together quickly -- balcony geometry is simpler than room interiors (no enclosure coordination), and the blocky clouds are exactly the kind of geometric primitive ClawBot handles well.
 
 | | | |
 |---|---|---|

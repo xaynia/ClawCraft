@@ -8,6 +8,12 @@ The project investigates what an AI-mediated creative workflow enables and limit
 
 Production ran from March 26 to April 16. Seven scenes delivered: `fridge_portal`, `shelf_artifacts`, `garden_growing_voxels`, `clouds_balcony`, `bedroom_cloud_sky`, `hallway_renderdist`, and `toy_shelf_scene`. 289 renders total across all scenes, logged with full metadata. See [JOURNAL.md](JOURNAL.md) for the iteration-by-iteration story and [CONCEPT-ART.md](CONCEPT-ART.md) for the DALL-E scene concept art that preceded each build.
 
+## Demo Videos
+
+- [All 289 Renders](https://youtu.be/S8gcj9-rnKI) -- every render the pipeline produced, in order
+- [Garden Voxels Build](https://youtu.be/o8-dEm6hjeY) -- 6x sped-up recording with synced terminal panel showing live tool calls
+- [4 New Scenes Build](https://youtu.be/NinDCYD1III) -- 22x sped-up recording of clouds_balcony, bedroom_cloud_sky, hallway_renderdist, and toy_shelf_scene with synced tool-call panel
+
 ## The Art
 
 The aesthetic explores childhood game worlds leaking into mundane domestic spaces:
