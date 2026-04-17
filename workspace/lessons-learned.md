@@ -67,8 +67,21 @@ Critical rules from this file have been embedded directly into SOUL.md where the
 
 ---
 
-Last updated: April 9, 2026
-Entries added after: fridge_portal kitchen shell + fridge build (10+ iterations); sword saga + representation engineering breakthrough; BlenderKit introspection discovery; garden scene; viewport-screenshot context scare.
+## html-canvas as Scene Composition Tool
+- The html-canvas intermediate is not just for pixel art. It works for full scene layout planning: shelf arrangement, toy placement, object spacing, lighting zones.
+- toy_shelf_scene (April 16) used html-canvas for the full scene spec and achieved zero failed iterations across 38 renders. Every render was refinement, not correction.
+- This validates the generalization ClawBot predicted during the sword saga: html-canvas works for "any task where you can introduce an intermediate constrained spec."
+- The key is matching the intermediate representation to the decision granularity. For pixel art, the grid is per-pixel. For scene composition, the grid is per-object-placement.
+
+## Final Production Speed
+- 4 scenes built in one evening session (April 16): clouds_balcony (11), bedroom_cloud_sky (3), hallway_renderdist (16), toy_shelf_scene (38) = 68 renders total.
+- Each scene builds faster than the last. The workflow compounds: accumulated SOUL.md rules + lessons-learned + representation engineering + emissive art direction = production speed.
+- bedroom_cloud_sky in 3 renders demonstrates that material/lighting tasks (ClawBot's strength) combined with accumulated spatial rules can produce a complete scene with almost no iteration.
+
+---
+
+Last updated: April 16, 2026
+Entries added after: fridge_portal kitchen shell + fridge build (10+ iterations); sword saga + representation engineering breakthrough; BlenderKit introspection discovery; garden scene; viewport-screenshot context scare; April 16 final push (4 new scenes, 68 renders, toy_shelf zero-fail validation).
 
 ## Mesh Topology for Furniture & Enclosures
 - The "single hollow cube, delete open face" rule applies to ALL enclosures, not just rooms. Cabinets, fridges, shelves, boxes — same pattern.

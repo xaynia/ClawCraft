@@ -55,7 +55,7 @@ This satisfies the second ML architecture requirement (diffusion/autoregressive 
 
 ---
 
-## toy_shelf (stretch goal)
+## toy_shelf (delivered)
 
 ![toy shelf concept](dalle-scene-concept-art/001-face-on-a-real-wooden-toy-shelf-warm-bed.png)
 
@@ -63,7 +63,7 @@ This satisfies the second ML architecture requirement (diffusion/autoregressive 
 
 ---
 
-## platformer_staircase (stretch goal)
+## platformer_staircase (not built)
 
 ![platformer concept](dalle-scene-concept-art/001-face-on-a-photorealistic-interior-house-.png)
 

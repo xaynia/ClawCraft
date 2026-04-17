@@ -11,31 +11,31 @@
 - [x] Shared volume mount for renders
 
 ## Week 2 (Mar 26-Apr 1): Asset Generation + Scene Building
-- [ ] Logging system operational
-- [ ] 6 pre-planned prompts documented in prompt_queue.md
-- [ ] 3+ test objects generated (simple single-object renders)
-- [ ] All 6 scenes attempted (at least 1 iteration each)
-- [ ] 3 scenes with 3+ iterations each
-- [ ] First render-report generated
-- [ ] workflow_notes.md has at least 5 observations
+- [x] Logging system operational
+- [x] 6 pre-planned prompts documented in prompt_queue.md
+- [x] 3+ test objects generated (simple single-object renders)
+- [x] All 6 scenes attempted (at least 1 iteration each)
+- [x] 3 scenes with 3+ iterations each
+- [x] First render-report generated
+- [x] workflow_notes.md has at least 5 observations (captured in render_log.json workflow_observation field instead)
 
 ## Week 3 (Apr 2-8): Art Production
-- [ ] All 6 scenes with 3+ iterations
-- [ ] 3 scenes selected as final art pieces
-- [ ] Physics/animation attempt on at least 1 scene
-- [ ] Prompt refinement patterns documented
-- [ ] Second render-report generated
-- [ ] workflow_notes.md has enough observations for report section
+- [x] All 6 scenes with 3+ iterations
+- [x] 3 scenes selected as final art pieces
+- [ ] Physics/animation attempt on at least 1 scene (scoped out -- focused on static scenes with emissive lighting)
+- [x] Prompt refinement patterns documented
+- [x] Second render-report generated
+- [x] workflow_notes.md has enough observations for report section (captured in render_log.json + lessons-learned.md)
 
 ## Week 4 (Apr 9): Presentation
-- [ ] Slidev presentation generated from render data
-- [ ] Workflow insight slides (from workflow_observation data)
-- [ ] Live demo or recorded walkthrough
-- [ ] Presentation delivered April 9
+- [x] Slidev presentation generated from render data
+- [x] Workflow insight slides (from workflow_observation data)
+- [x] Live demo or recorded walkthrough
+- [x] Presentation delivered April 9
 
 ## Week 5 (Apr 10-16): Report + Curation
-- [ ] Final art pieces curated (stills + any animations)
-- [ ] Demo video produced
-- [ ] Report written (process, implementation, artistic reflection, workflow insights, challenges)
-- [ ] Report addresses all 6 points from professor feedback
-- [ ] Report due April 16
+- [x] Final art pieces curated (stills + any animations)
+- [x] Demo video produced (3 YouTube videos: render montage, garden voxels synced, new scenes synced)
+- [x] Report written (process, implementation, artistic reflection, workflow insights, challenges)
+- [x] Report addresses all 6 points from professor feedback
+- [x] Report due April 16 -- submitted

@@ -4,17 +4,21 @@ Raw process documentation: every render the pipeline produced, ordered by scene 
 
 See [DALL-E Concept Art](CONCEPT-ART.md) for pre-production reference images and prompts used before each scene build.
 
-## At a Glance (as of April 6, 2026)
+## At a Glance (as of April 16, 2026)
 
-- ~209 renders across 5 scenes and 6 sessions. Presentation April 9.
+- 289 renders across 7 delivered scenes and 8 sessions. Report submitted April 16.
 - Pipeline was broken for a week due to a silent tool name conflict. Fixed March 31. Fully operational since.
-- fridge_portal: 23 renders, mostly fighting spatial construction. The AI couldn't build a room from separate walls or place a fridge inside it.
-- shelf_artifacts: 169 renders across 3 sessions. Evolved from basic shelf to polished scene with Minecraft diamond sword, emissive materials, BlenderKit PBR textures, and compositor post-processing.
-- garden_growing_voxels: 10 renders in ~18 minutes. Built using the "representation engineering" workflow discovered during the sword saga. First scene where the planning-first approach was used from the start.
+- fridge_portal: 25 renders, mostly fighting spatial construction. The AI couldn't build a room from separate walls or place a fridge inside it.
+- shelf_artifacts: 170 renders across 3 sessions. Evolved from basic shelf to polished scene with Minecraft diamond sword, emissive materials, BlenderKit PBR textures, and compositor post-processing.
+- garden_growing_voxels: 11 renders in ~18 minutes. Built using the "representation engineering" workflow discovered during the sword saga. First scene where the planning-first approach was used from the start.
+- clouds_balcony: 11 renders. Photorealistic balcony with Minecraft-style blocky clouds in sunset sky. DALL-E concept art used as visual target.
+- bedroom_cloud_sky: 3 renders. Cozy bedroom with ceiling replaced by retro game sky. Fast build.
+- hallway_renderdist: 16 renders. Dim hallway with glowing red emissive game-over screen in doorframe. Moody scene.
+- toy_shelf_scene: 38 renders. Wooden shelf with plush toys and a glowing Minecraft creeper. Used html-canvas intermediate with zero failed iterations, validating the representation engineering workflow on a new scene type.
 - The AI excels at materials, lighting, and parameter-based operations (1-2 iterations). It struggles with spatial coordination and multi-part assembly (8-25 iterations). But with the right intermediate representation (html-canvas 2D preview), spatial tasks drop to 1-2 iterations too.
 - Writing failure corrections into the AI's instruction file (SOUL.md) produced measurable improvement across scenes (Reflexion-style learning).
 - The AI discovered it could extend its own toolset by introspecting Blender's operator registry (BlenderKit via bpy.ops). It also self-analyzed its methodology and named it "representation engineering."
-- Each scene builds faster than the last: fridge 25 renders fighting walls, shelf 24 first session + 145 iterating, garden 10 renders total in 18 minutes.
+- Each scene builds faster than the last: fridge 25 renders fighting walls, shelf 24 first session + 145 iterating, garden 11 renders total in 18 minutes, final four scenes 68 renders in one evening session.
 
 **Thesis:** AI-assisted 3D art creation produces two complementary forms of intelligence that neither human nor AI achieves alone: the human provides spatial reasoning and persistence the AI lacks, while the AI provides pattern analysis, methodology articulation, and emergent tool discovery the human can't efficiently perform. The iterative feedback loop isn't a workaround for AI limitations -- it's the creative method itself. And when the right intermediate representation is found (html-canvas as a planning layer), the loop accelerates dramatically.
 
@@ -37,29 +41,46 @@ Every render is tagged by ClawBot with an `outcome_type` — the AI's own evalua
 
 ## Project Stats
 
-- **Total renders:** ~209
+- **Total renders:** 289
 - **Total render time:** EEVEE renders in 1-3 seconds each. The time is in the iteration loop, not the rendering.
-- **Scenes attempted:** 5 (test_cube, test_sphere, fridge_portal, shelf_artifacts, garden_growing_voxels)
-- **Sessions:** 6 (March 23 infrastructure, March 26 Notion, March 28 failed renders, March 31 breakthrough, April 2-3 sword saga + breakthroughs, April 4 garden + housekeeping)
+- **Scenes attempted:** 9 (test_cube, test_sphere, fridge_portal, shelf_artifacts, garden_growing_voxels, clouds_balcony, bedroom_cloud_sky, hallway_renderdist, toy_shelf_scene)
+- **Scenes delivered:** 7 (excluding test scenes)
+- **Sessions:** 8 (March 23 infrastructure, March 26 Notion, March 28 failed renders, March 31 breakthrough, April 2-3 sword saga + breakthroughs, April 4 garden + housekeeping, April 9 presentation, April 16 final production push)
 
 ### Per-Scene Breakdown
 
-**fridge_portal** - 23 renders across 3 sessions
+**fridge_portal** - 25 renders across 3 sessions
 - March 26: 2 renders (early test)
 - March 28: 11 renders (broken pipeline, images never posted to Discord)
-- March 31: 10 renders (working pipeline, spatial reasoning battleground)
+- March 31: 12 renders (working pipeline, spatial reasoning battleground)
 - Issues: walls as separate planes with gaps, fridge behind back wall, parts floating, parenting reversed, origins off-center
 - Fix that worked: "build a hollow cube and delete the front face" instead of "build a room with connected walls"
 
-**shelf_artifacts** - 169 renders across 3 sessions
+**shelf_artifacts** - 170 renders across 3 sessions
 - March 31: 24 renders in ~96 min. First build correct (SOUL.md lessons from fridge). Polished to wood shelf, iron brackets, mugs, potion, gem, wall-mounted sword.
 - April 2-3: ~120 renders. Minecraft diamond sword saga (40+ failed direct attempts, then html-canvas breakthrough). Emissive materials. BlenderKit discovery.
-- April 3-4: ~25 renders. BlenderKit PBR materials, compositor nodes (glare, fog glow, star glints), continued polish.
+- April 3-4: ~26 renders. BlenderKit PBR materials, compositor nodes (glare, fog glow, star glints), continued polish.
 
-**garden_growing_voxels** - 10 renders in one session
-- April 4: 10 renders in ~18 minutes (2:21 AM to 2:39 AM)
+**garden_growing_voxels** - 11 renders in one session
+- April 4: 11 renders in ~18 minutes (2:21 AM to 2:39 AM)
 - First scene built using the full "representation engineering" workflow from the start
 - html-canvas preview approved before any Blender work. Built correctly on essentially the first attempt.
+
+**clouds_balcony** - 11 renders in ~19 minutes
+- April 16: 11 renders. Photorealistic balcony with Minecraft-style blocky clouds in sunset sky.
+- DALL-E concept art used as visual target. Simple geometry (no enclosure coordination).
+
+**bedroom_cloud_sky** - 3 renders in ~6 minutes
+- April 16: 3 renders. Fastest scene build. Cozy bedroom with ceiling replaced by retro game sky.
+- Material/lighting task -- ClawBot's strongest domain. No spatial battles.
+
+**hallway_renderdist** - 16 renders in ~30 minutes
+- April 16: 16 renders. Diverged from original render-distance concept into GAME OVER doorframe scene.
+- Strongest atmospheric effect in the project. Emissive red light flooding dim hallway.
+
+**toy_shelf_scene** - 38 renders in ~40 minutes
+- April 16: 38 renders. Zero failed iterations. html-canvas intermediate validated on new scene type.
+- Wooden shelf with plush toys and glowing Minecraft creeper. Proves representation engineering generalizes.
 
 **test_cube** - 3 renders. Pipeline validation.
 
@@ -67,7 +88,7 @@ Every render is tagged by ClawBot with an `outcome_type` — the AI's own evalua
 
 ### What ClawBot's Own Analysis Found
 
-From ClawBot's workflow_observation field across ~209 renders:
+From ClawBot's workflow_observation field across 289 renders:
 1. Constraint-driven edits converge faster than subjective nudging
 2. Geometry-first, then materials/lighting improves iteration clarity
 3. Measured coordinate snapping beats visual guessing for contact/seating
@@ -87,7 +108,7 @@ From ClawBot's workflow_observation field across ~209 renders:
 
 **Level 3 - AI methodology articulation:** ClawBot named the html-canvas workflow "representation engineering" and independently identified where else it applies (logos, room layouts, texture masks). The AI contributed to workflow design, not just task execution.
 
-Neither level works alone. The human can't generate 209 renders and analyze patterns efficiently. The AI can't reason about 3D space or debug third-party addon bugs. Three systems collaborated: ClawBot discovered methods (bpy.ops introspection), the user provided persistence and skepticism, Claude Code fixed underlying code (BlenderKit avatar512 bug).
+Neither level works alone. The human can't generate 289 renders and analyze patterns efficiently. The AI can't reason about 3D space or debug third-party addon bugs. Three systems collaborated: ClawBot discovered methods (bpy.ops introspection), the user provided persistence and skepticism, Claude Code fixed underlying code (BlenderKit avatar512 bug).
 
 ---
 
@@ -275,6 +296,92 @@ The workflow is compounding. Rules + methodology + planning layer = dramatically
 
 ---
 
+## Scene 4: clouds_balcony (April 16)
+
+**Vision:** A photorealistic apartment balcony at golden hour. The sky is real sunset colors but the clouds are wrong -- they are Minecraft-style blocky voxel clouds, flat geometric forms with clean stepped edges, glowing with soft emissive white light. The balcony is grounded and believable. The clouds are a visual glitch from another world.
+
+11 renders in ~19 minutes. Built during the final production push. DALL-E concept art was used as a visual target before building in Blender. The scene came together quickly -- balcony geometry is simpler than room interiors (no enclosure coordination), and the blocky clouds are exactly the kind of geometric primitive ClawBot handles well.
+
+| | | |
+|---|---|---|
+| ![001](renders/clouds_balcony_001.png) | ![002](renders/clouds_balcony_002.png) | ![003](renders/clouds_balcony_003.png) |
+| First build | Balcony geometry | Cloud placement |
+| ![004](renders/clouds_balcony_004.png) | ![005](renders/clouds_balcony_005.png) | ![006](renders/clouds_balcony_006.png) |
+| Lighting adjustments | Sunset sky developing | Cloud shapes refined |
+| ![007](renders/clouds_balcony_007.png) | ![008](renders/clouds_balcony_008.png) | ![009](renders/clouds_balcony_009.png) |
+| Emissive glow on clouds | Materials pass | Composition tweaks |
+| ![010](renders/clouds_balcony_010.png) | ![011](renders/clouds_balcony_011.png) | |
+| Near final | **Final render** | |
+
+---
+
+## Scene 5: bedroom_cloud_sky (April 16)
+
+**Vision:** A cozy bedroom with real wooden furniture and a messy bed. The ceiling is gone -- replaced by a retro game sky with blocky emissive clouds glowing soft blue and pink. Stars are pixel squares. The room is lit from above by the fake game sky casting unnatural light on the real furniture below.
+
+3 renders in ~6 minutes. The fastest scene build in the project. The bedroom furniture was straightforward geometry and the sky replacement was a material/lighting task -- exactly what ClawBot is best at. No spatial coordination battles. The emissive sky casting colored light onto real furniture below was the visual payoff.
+
+| | | |
+|---|---|---|
+| ![001](renders/bedroom_cloud_sky_001.png) | ![002](renders/bedroom_cloud_sky_002.png) | ![003](renders/bedroom_cloud_sky_003.png) |
+| First build with sky | Lighting adjustments | **Final render** |
+
+---
+
+## Scene 6: hallway_renderdist (April 16)
+
+**Vision:** A dim photorealistic hallway with an open door at the end. Inside the doorframe: a glowing red retro video game GAME OVER screen, flat and screen-like yet occupying physical space. Bright emissive red text floods the hallway with colored light. Floating UI elements hover in the darkness. The hallway is grounded and realistic. The doorframe is a portal of pure gamified visual logic.
+
+16 renders in ~30 minutes. This scene diverged from the original prompt_queue concept (progressive render distance degradation) into something moodier -- the GAME OVER screen in the doorframe. The emissive red light casting down the dim hallway created the strongest atmospheric effect of any scene. Most iterations were lighting and material refinement, not spatial fixes.
+
+| | | |
+|---|---|---|
+| ![001](renders/hallway_renderdist_001.png) | ![002](renders/hallway_renderdist_002.png) | ![003](renders/hallway_renderdist_003.png) |
+| First build | Hallway geometry | Door and frame |
+| ![004](renders/hallway_renderdist_004.png) | ![005](renders/hallway_renderdist_005.png) | ![006](renders/hallway_renderdist_006.png) |
+| Game over screen placement | Emissive red glow | Light spill down hallway |
+| ![007](renders/hallway_renderdist_007.png) | ![008](renders/hallway_renderdist_008.png) | ![009](renders/hallway_renderdist_009.png) |
+| UI elements added | Atmosphere developing | Material refinement |
+| ![010](renders/hallway_renderdist_010.png) | ![011](renders/hallway_renderdist_011.png) | ![012](renders/hallway_renderdist_012.png) |
+| Lighting pass | Fog and mood | Composition adjustment |
+| ![013](renders/hallway_renderdist_013.png) | ![014](renders/hallway_renderdist_014.png) | ![015](renders/hallway_renderdist_015.png) |
+| Final polish | Near final | Color grading |
+| ![016](renders/hallway_renderdist_016.png) | | |
+| **Final render** | | |
+
+---
+
+## Scene 7: toy_shelf_scene (April 16)
+
+**Vision:** A real wooden toy shelf, warm bedside lamp lighting, soft shadows. The shelf holds plush toys -- a robot, a bunny, a capybara. Sitting among them is a glowing Minecraft creeper, perfectly pixelated with vivid emissive green skin and an illuminated face. The creeper casts eerie green light onto the plush toys, wood shelf, and nearby wall. The real toys remain soft and tactile. The creeper feels like a game asset intruding into childhood reality.
+
+38 renders in ~40 minutes. The most important scene of the final push because it validated the html-canvas representation engineering workflow on a completely new scene type. ClawBot used an html-canvas intermediate specification to plan the shelf layout, toy placement, and creeper positioning before building anything in Blender. The result: zero failed iterations. Every render was either a success or a deliberate refinement -- no spatial coordination failures, no fighting wall placement or object origins. This is the proof that the methodology discovered during the sword saga generalizes beyond pixel art to full scene composition.
+
+**Key comparison across the project:**
+- fridge_portal: 25 renders, most fighting spatial construction
+- shelf_artifacts (session 1): 24 renders, correct placement but 8 iterations on sword
+- garden_growing_voxels: 11 renders in 18 minutes, correct from first build
+- toy_shelf_scene: 38 renders, zero failed iterations, all refinement
+
+The iteration count went up (38 vs 11) but the failure count went to zero. More renders does not mean more problems -- it means more polish. The workflow eliminated the class of errors that dominated early scenes.
+
+| | | |
+|---|---|---|
+| ![001](renders/toy_shelf_scene_001.png) | ![002](renders/toy_shelf_scene_002.png) | ![003](renders/toy_shelf_scene_003.png) |
+| First build from html-canvas spec | Shelf geometry | Toy placement |
+| ![005](renders/toy_shelf_scene_005.png) | ![008](renders/toy_shelf_scene_008.png) | ![010](renders/toy_shelf_scene_010.png) |
+| Plush toys taking shape | Materials developing | Creeper placement |
+| ![013](renders/toy_shelf_scene_013.png) | ![016](renders/toy_shelf_scene_016.png) | ![019](renders/toy_shelf_scene_019.png) |
+| Emissive green glow | Light spill onto toys | Warm lamp lighting |
+| ![022](renders/toy_shelf_scene_022.png) | ![025](renders/toy_shelf_scene_025.png) | ![028](renders/toy_shelf_scene_028.png) |
+| Texture refinement | Composition polish | Shadow detail |
+| ![031](renders/toy_shelf_scene_031.png) | ![034](renders/toy_shelf_scene_034.png) | ![036](renders/toy_shelf_scene_036.png) |
+| Near final | Color grading | Final polish |
+| ![037](renders/toy_shelf_scene_037.png) | ![038](renders/toy_shelf_scene_038.png) | |
+| Finishing touches | **Final render** | |
+
+---
+
 ## Breakthroughs Timeline
 
 | Date | Discovery | Impact |
@@ -287,3 +394,6 @@ The workflow is compounding. Rules + methodology + planning layer = dramatically
 | Apr 3 | BlenderKit via bpy.ops introspection | AI extends own toolset at runtime |
 | Apr 3 | Three-system collaboration model | Human + AI agent + AI assistant |
 | Apr 4 | Garden scene in 18 min using full workflow | Compounding validated |
+| Apr 16 | 4 new scenes in one evening session (68 renders) | Production speed proven |
+| Apr 16 | toy_shelf: zero failed iterations with html-canvas | Representation engineering generalized beyond pixel art |
+| Apr 16 | 7 scenes delivered, 289 total renders | Project scope exceeded original 6-scene target |
