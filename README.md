@@ -4,9 +4,9 @@ An AI-assisted 3D art pipeline that turns natural language into rendered Blender
 
 Describe a scene in Discord. An AI agent interprets your prompt, writes Blender Python code, builds the scene, renders it, and posts the image back. You evaluate, give feedback, and the loop repeats — each iteration refining the result. Every render is automatically logged with the prompt, commands executed, timing, outcome classification, and a process observation.
 
-The project investigates what an AI-mediated creative workflow enables and limits compared to traditional 3D modeling. The art is the output. The workflow insight is the contribution.
+The project investigates what an AI-mediated creative workflow enables and limits compared to traditional 3D modeling. The art is the output. The workflow insight is the contribution. See [THESIS.md](THESIS.md) for the full thesis argument and supporting evidence.
 
-Production ran from March 26 to April 16. Seven scenes delivered: `fridge_portal`, `shelf_artifacts`, `garden_growing_voxels`, `clouds_balcony`, `bedroom_cloud_sky`, `hallway_renderdist`, and `toy_shelf_scene`. 289 renders total across all scenes, logged with full metadata. See [JOURNAL.md](JOURNAL.md) for the iteration-by-iteration story and [CONCEPT-ART.md](CONCEPT-ART.md) for the DALL-E scene concept art that preceded each build.
+Production ran from March 26 to April 16. Seven scenes delivered: `fridge_portal`, `shelf_artifacts`, `garden_growing_voxels`, `clouds_balcony`, `bedroom_cloud_sky`, `hallway_renderdist`, and `toy_shelf_scene`. 289 renders total across all scenes, logged with full metadata. See [JOURNAL.md](JOURNAL.md) for the iteration-by-iteration story, [CONCEPT-ART.md](CONCEPT-ART.md) for the DALL-E scene concept art that preceded each build, and [BREAKTHROUGH.md](BREAKTHROUGH.md) for ClawBot's own analysis of the representation engineering methodology.
 
 ## Demo Videos
 
@@ -17,12 +17,15 @@ Production ran from March 26 to April 16. Seven scenes delivered: `fridge_portal
 
 ## The Art
 
-The aesthetic explores childhood game worlds leaking into mundane domestic spaces:
+The aesthetic explores childhood game worlds leaking into mundane domestic spaces. 7 scenes delivered, 289 renders:
 
-- A fridge that opens onto a blocky voxel landscape extending to the horizon
-- Kitchen shelves holding low-poly game artifacts next to coffee mugs
-- A hallway where objects degrade from photorealistic to N64-era low-poly with distance
-- A bathtub overflowing with flat-shaded water that turns realistic as it hits the tile floor
+- **fridge_portal** -- a retro fridge opens onto a blocky voxel landscape with grass blocks, waterfalls, and a cat watching from the kitchen floor
+- **shelf_artifacts** -- a wall shelf with ceramic mugs and plates next to a glowing minecraft potion bottle, faceted crystal gem, and two swords: one realistic silver, one pixelated diamond
+- **garden_growing_voxels** -- a realistic windowsill planter box with minecraft-style voxel plants growing from real soil, emissive blocky stems and a glowing flower
+- **clouds_balcony** -- a photorealistic apartment balcony at golden hour with minecraft blocky clouds floating in the sunset sky
+- **bedroom_cloud_sky** -- a cozy bedroom where the ceiling is replaced by a retro game sky with blocky emissive clouds and pixel stars
+- **hallway_renderdist** -- a dim photorealistic hallway with a glowing red GAME OVER screen filling an open doorframe, emissive red light flooding the corridor
+- **toy_shelf_scene** -- a wooden toy shelf with a robot, bunny stuffy, and capybara next to a glowing minecraft creeper casting eerie green light on the real toys
 
 The contrast between rendering styles is the point. Realistic PBR lighting falls on impossible geometry. Both successes and productive failures are part of the work.
 
