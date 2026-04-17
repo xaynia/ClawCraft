@@ -319,7 +319,7 @@ The workflow is compounding. Rules + methodology + planning layer = dramatically
 
 **Vision:** A cozy bedroom with real wooden furniture and a messy bed. The ceiling is gone -- replaced by a retro game sky with blocky emissive clouds glowing soft blue and pink. Stars are pixel squares. The room is lit from above by the fake game sky casting unnatural light on the real furniture below.
 
-3 renders in ~6 minutes. The fastest scene build in the project. The bedroom furniture was straightforward geometry and the sky replacement was a material/lighting task -- exactly what ClawBot is best at. No spatial coordination battles. The emissive sky casting colored light onto real furniture below was the visual payoff.
+3 saved renders in ~6 minutes (4 attempted -- Blender crashed on the 4th, possibly due to a cloth modifier). The fastest scene build in the project. The bedroom furniture was straightforward geometry and the sky replacement was a material/lighting task -- exactly what ClawBot is best at. No spatial coordination battles. The emissive sky casting colored light onto real furniture below was the visual payoff.
 
 | | | |
 |---|---|---|
